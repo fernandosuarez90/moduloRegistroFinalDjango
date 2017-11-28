@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block content %}
+<h1 class="masthead-title" >
+        <FONT SIZE=6><a><center>REGISTRAR NUEVO CLIENTE</center></a></FONT>
+</h1>
+
+
+{% load crispy_forms_tags %}
+<form enctype="multipart/form-data" method='POST' action="">
+	{% csrf_token %}     
+	{{ form|crispy }}
+	<button type="submit" class="btn btn-primary">Guardar</button>
+	<a href="{% url 'cliente-list' %}">Cancel</a>
+</form>
+{% endblock content %}

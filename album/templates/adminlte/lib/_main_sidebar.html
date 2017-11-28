@@ -1,0 +1,85 @@
+{% extends 'adminlte/lib/_main_sidebar.html' %} {% block nav_links %}
+
+<!--
+<li>
+  <a href="{% url 'category-list' %}">
+            <i class="glyphicon glyphicon-list x4"></i> <span>Categorias</span>
+        </a>
+</li>
+
+<li class="treeview">
+  <a href="#">
+        <i class="fa fa-camera"></i>
+        <span>Fotografia</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+  <ul class="treeview-menu" style="display: none;">
+    <li><a href="{% url 'photo-list' %}"><i class="glyphicon glyphicon-picture"></i> Mostrar Foto</a></li>
+    <li><a href="{% url 'photo-create' %}"><i class="glyphicon glyphicon-upload"></i> Subir Foto</a></li>
+  </ul>
+</li>
+
+
+-->
+
+<li>
+  <a href="{% url 'categoria-list' %}">
+            <i class="glyphicon 	glyphicon glyphicon-duplicate x4"></i> <span>Categotias productos</span>
+        </a>
+</li>
+
+
+<li class="treeview">
+    <a href="#">
+          <i class="glyphicon glyphicon glyphicon-gift x4"></i>
+          <span>Productos</span>
+          <span class="pull-right-container">
+            <i class="fa fa-angle-left pull-right"></i>
+          </span>
+        </a>
+    <ul class="treeview-menu" style="display: none;">
+        <li><a href="{% url 'producto-list' %}"><i class="		glyphicon glyphicon-ok-sign"></i>Productos Disponibles</a></li>
+      <li><a href="{% url 'producto-create' %}"><i class="	glyphicon glyphicon-plus"></i>Registrar Productos</a></li>
+      
+     
+    </ul>
+  </li>
+
+
+
+
+
+
+<li class="treeview">
+  <a href="#">
+        <i class="glyphicon glyphicon glyphicon-shopping-cart x4"></i>
+        <span>Ventas</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+  <ul class="treeview-menu" style="display: none;">
+      <li><a href="{% url 'venta-list' %}"><i class="		glyphicon glyphicon-ok-sign"></i>Ventas Realizadas</a></li>
+    <li><a href="{% url 'venta-create' %}"><i class="	glyphicon glyphicon-plus"></i>Registrar venta</a></li>
+    
+   
+  </ul>
+</li>
+
+<li>
+    <a href="{% url 'cliente-list' %}">
+              <i class="glyphicon glyphicon-user x4"></i> <span>Gestion Clientes</span>
+          </a>
+  </li>
+  
+
+
+
+
+
+
+
+
+{% endblock nav_links %}

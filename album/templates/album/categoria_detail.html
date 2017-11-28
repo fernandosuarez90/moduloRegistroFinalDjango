@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block section %}
+         <h2>{{ object.nombre}}</h2>
+         <hr>
+ {% endblock section %}
+ 
+ 
+ 
+ 
+ {% block content %}
+
+ 
+ 
+ 
+ <!--  -->
+ 
+ <div class="row">
+     <div class="col-md-12">
+       <div class="box">
+         <div class="box-header with-border">
+           <h3 class="box-title">Imagenes Recientes</h3>
+ 
+           <div class="box-tools pull-right">
+             <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+             </button>
+             <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+           </div>
+         </div>
+         <!-- /.box-header -->
+         <div class="box-body">
+           <div class="row">
+             <div class="col-md-8">
+               <p class="text-center">
+                 <strong>Sales: 28 Nov, 2017 - 28 Nov, 2017 </strong>
+               </p>
+
+         
+         <div>
+                 <table border="0px">
+                     <tr>
+                        {% for p in object.producto_set.all %}
+                    <td>
+        <div align="CENTER">{{ p.nombre }}</div>
+         <div>
+                <a href="{% url 'producto-detail' p.id_producto %}">
+                    <img src="{% static p.photo.url %}" style="width:320px;height:320px;border-radius: 10px;" HSPACE="10" VSPACE="10"/>
+                </a>
+         </div>
+                    </td>
+                {% endfor %}
+                    </tr>
+                    </table>
+        </div>
+ 
+ 
+               <div class="chart">
+                 <!-- Sales Chart Canvas -->
+                 <canvas id="salesChart" style="height: 12px; width: 1224px;" width="306" height="78"></canvas>
+               </div>
+               <!-- /.chart-responsive -->
+             </div>
+             <!-- /.col -->
+             
+           </div>
+           <!-- /.row -->
+         </div>
+ 
+       
+       </div>
+       <!-- /.box -->
+     </div>
+     <!-- /.col -->
+   </div>
+ 
+ 
+ 
+ {% endblock content %} 

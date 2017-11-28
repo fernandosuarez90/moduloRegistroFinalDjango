@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block section %}
+
+{% endblock section %}
+{% block content %}
+<h1 class="masthead-title" >
+        <FONT SIZE=6><a><center>CLIENTES REGISTRADOS</center></a></FONT>
+</h1>
+
+
+<a class="btn btn-danger" style="color:white" href="{% url 'cliente-create' %}"><span class="glyphicon glyphicon-pencil"></span> Registrar Nuevo</a>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table class="table table-bordered" style="text-align:center; margin-top: -10%;">
+        <thead>
+            <tr >
+                    <th>IDENTIFICACION C.C </th>
+                    <th>NOMBRES</th>
+                    <th>APELLIDOS</th>
+                    <th>CORREO ELECTRONICO</th>
+                    <th>TELEFONO</th>
+      
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in object_list %}
+            <tr class="info">
+                
+                <td>
+                        <a href="{% url 'cliente-detail' c.pk %}">{{ c.cedula }}</a>
+                       
+                       
+                </td>
+
+                <td>
+                        <a href="{% url 'cliente-detail' c.pk %}">{{ c.nombre }}</a>
+                </td>
+
+                <td>
+                        <a href="{% url 'cliente-detail' c.pk %}">{{ c.apellidos }}</a>
+                </td>
+
+                <td>
+                        <a href="{% url 'cliente-detail' c.pk %}">{{ c.email }}</a>
+                </td>
+
+                <td>
+                        <a href="{% url 'cliente-detail' c.pk %}">{{ c.celular }}</a>
+                </td>
+
+               
+
+                
+                <br>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+        
+
+    </table>
+
+
+
+</div>
+
+
+{% endblock content %}
+
+
+
+
+
+
+ 

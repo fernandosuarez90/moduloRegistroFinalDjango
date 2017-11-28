@@ -1,0 +1,77 @@
+
+
+
+{% extends 'base.html' %} {% block section %}
+
+{% endblock section %}
+{% block content %}
+<h1 class="masthead-title" >
+        <FONT SIZE=6><a><center>VENTAS REALIZADAS</center></a></FONT>
+</h1>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<table class="table table-bordered" style="text-align:center; margin-top: -10%;">
+        <thead>
+            <tr >
+                    <th>FECHA DE VENTA </th>
+                    <th>CLIENTE</th>
+                    <th>CANTIDAD</th>
+                    <th>$ VALOR VENTA</th>
+                    <th>PRODUCTOS</th>
+      
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in object_list %}
+            <tr class="info">
+                
+                <td>
+                        <a href="{% url 'venta-detail' c.pk %}">{{ c.fecha_venta }}</a>
+                       
+                       
+                </td>
+
+                <td>
+                        <a href="{% url 'venta-detail' c.pk %}">{{ c.cliente }}</a>
+                </td>
+
+                <td>
+                        <a href="{% url 'venta-detail' c.pk %}">{{ c.cantidad_venta }}</a>
+                </td>
+
+                <td>
+                        <a href="{% url 'venta-detail' c.pk %}">{{ c.valor }}</a>
+                </td>
+
+                <td>
+                        <a href="{% url 'venta-detail' c.pk %}">{% for c in c.productos.all %}  {{ c.nombre }} {% endfor %}</a>
+
+                        
+                        
+                </td>
+
+               
+
+                
+                <br>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    
+    
+    
+    </div>
+    
+    
+    {% endblock content %}
+    
+    
+    
+    

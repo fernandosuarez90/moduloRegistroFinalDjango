@@ -1,0 +1,86 @@
+{% extends "base1.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+
+<div  class='row' >
+    
+<div class='col-sm-6 col-sm-offset-3'>
+
+    
+    
+  <div class="login-box-body" style="border-radius:10px; border: 1px solid rgb(179, 166, 166); background-color: rgb(255, 250, 251);"> 
+    <BR>
+     
+
+
+<span class="logo-mini"><img  align="right" src="http://www.nutro.es/media/2014/08/icon-tiendas-online.png" width="70" height="70"><b></b></span>
+<h1 class="masthead-title" > 
+    <FONT SIZE=6><a><center>REGISTRO DE VENTAS</center></a></FONT>
+</h1>
+
+
+<h2 class='text-align-center'><strong>Iniciar Sesión</strong></h2>
+<form method="post" action=".">
+  {% csrf_token %} 
+  {{ form|crispy }}
+
+  <input class='btn btn-block btn-primary' type="submit" value="{% trans 'Iniciar sesion' %}" />
+  <input type="hidden" name="next" value="{{ next }}" />
+
+</form>
+
+<p>{% trans "Has olvidado tu contraseña" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Restablecer" %}</a>!</p>
+
+
+
+<hr noshade="noshade" />
+
+<p>{% trans "No tienes cuenta" %}? <a href="{% url 'registration_register' %}">{% trans "Registrarte Aqui" %}</a>!</p>
+    
+    <a href="{% url 'social:begin' 'facebook' %}">
+    <p  class="btn btn-sm btn-social btn-facebook"> 
+      <i class="fa fa-facebook"></i>  <font size="2">Sign in with Facebook</font>
+    </p>
+    </a>
+
+    <a href="{% url 'social:begin' 'google-oauth2' %}" >
+    <p class="btn btn-sm btn-social btn-google">
+      <i class="fa fa-google-plus"></i> <font size="2">Sign in with Google</font>
+    </p>
+    </a>
+    
+    <a href="{% url 'social:begin' 'twitter' %}" >
+    <p class="btn btn-sm btn-social btn-twitter" > 
+      <i class="fa fa-twitter"></i> <font size="2">Sign in with Twitter</font>
+    </p>
+    </a>
+
+    
+
+
+    
+    <br>
+    <br>
+    <br>
+
+  
+  
+
+</div>
+</div>
+</hr>
+
+
+
+<div class='row'>
+<div class='col-sm-6 col-sm-offset-3'>
+	<br/>
+
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block section %}
+ <h2>{{ object.nombre }}
+{% if objet.categoria_id %}
+	( <a href="{% url 'categoria-detail' object.categoria_id %}">{{ object.categoria }}</a>)
+ {% endif %} 
+ </h2>
+ <a href="{% url 'producto-update' object.id_producto %}">edit</a>
+ <a href="{% url 'producto-delete' object.id_producto %}">delete</a​>
+
+{% endblock section %}
+{% block content %}  
+<div class="col-md-4 well">
+<div class="panel-heading">
+<h2 ​class​=​"panel-title"​>{{ object.nombre }}</h2​>
+ <img src="{% static object.photo.url %}"
+style="width:250px;height:250px"/>
+ </div>
+
+
+
+
+ 
+ <div style=font-size:20px;color:red; class="panel-footer">Valor Celular: ${{ object.precio }}</div>
+ </div>
+ 
+ {% endblock content %}  
+
+

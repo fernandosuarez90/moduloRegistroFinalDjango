@@ -1,0 +1,51 @@
+
+
+
+
+
+{% extends 'base.html' %}
+
+{% block section %}
+
+    <h2>Category</h2>
+    <hr>
+{% endblock section %}
+
+{% block content %}
+    <h1 class="masthead-title" >
+            <FONT SIZE=20><a><center>Categoria de Productos</center></a></FONT>
+                
+
+          </h1>
+
+          <a class="btn btn-danger" style="color:white" href="{% url 'categoria-create' %}"><span class="glyphicon glyphicon-plus-sign"></span> Nueva Categoria</a>          
+<br>
+<br>
+    
+
+    <div class="row">
+            <div class="col-xs-12">
+              <div class="box box-default">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Categorias nuevas</h3>
+                </div>           
+                
+
+                <div class="box-body">
+                        {% for c in object_list %}
+                        <a class="btn btn-info"  style="color:White" href="{% url 'categoria-detail' c.pk %}">{{ c.nombre }}</a>
+                        {% endfor %}
+                </div>
+
+              </div>
+            </div>
+    </div>
+
+    <div>
+
+      
+    </div>
+
+ 
+
+{% endblock content %} 

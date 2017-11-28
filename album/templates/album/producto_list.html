@@ -1,0 +1,49 @@
+
+
+{% extends 'base.html' %} {% block section %}
+
+{% endblock section %}
+{% block content %}
+<h1 class="masthead-title" >
+        <FONT SIZE=6><a><center>PRODUCTOS DISPONIBLES</center></a></FONT>
+</h1>
+
+<br>
+<br>
+
+<table class="table table-bordered" style="text-align:center; margin-top: -10%;">
+        <thead>
+            <tr >
+                    <th>PRODUCTOS</th>
+                    <th>PRECIO</th>
+                    
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in object_list %}
+            
+
+            <tr class="info">
+                
+                <td><strong>{{ c.nombre }}</strong></td>
+                <td>{{ c.precio }}</td>
+                <td><a href="{% url 'producto-detail' c.pk %}"><i  class="fa fa-picture-o fa-6" ></i></a></td>
+
+                
+                
+                <br>
+            </tr>
+            {% endfor %}
+        </tbody>
+
+        
+
+    </table>
+
+
+
+</div>
+
+
+{% endblock content %}
+
